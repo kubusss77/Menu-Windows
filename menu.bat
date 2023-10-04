@@ -17,7 +17,7 @@ for /f %%i in ('time /T') do set czas_uruchomienia_skryptu=%%i
 
 
 ::Aby na początku skryptu nie wyświetlało się logo, nalezy odkomentować poniszą linię:
-goto kat_glowna
+::goto kat_glowna
 
 mode 62,10
 color 3B
@@ -323,7 +323,7 @@ echo(
 			
 		:menu_uzytkownicy_c
 			set "menu_uzytkownicy="
-			for /f %%i in ('net localgroup administrators ^| find /c /v ""') do set linie_uzytkownicy_c=%%i
+			for /f %%i in ('net localgroup Administratorzy ^| find /c /v ""') do set linie_uzytkownicy_c=%%i
 			set /a "linie_uzytkownicy_c=%linie_uzytkownicy_c%+6"
 			cls
 			mode 80,%linie_uzytkownicy_c%
@@ -332,7 +332,7 @@ echo(
 			echo                              (c) Jakub Szczepa 2023
 			echo.
 			
-			net localgroup administrators
+			net localgroup Administratorzy
 			
 			echo   Aby wrocic, wcisnij dowolny klawisz.
 			
@@ -376,7 +376,7 @@ echo(
 				echo. >> %plik_uzytkownicy_d%
 				echo  Uzytkownicy w grupie Administratorzy: >> %plik_uzytkownicy_d%
 				echo. >> %plik_uzytkownicy_d%
-				net localgroup administrators >> %plik_uzytkownicy_d%
+				net localgroup Administratorzy >> %plik_uzytkownicy_d%
 			
 			::KONSOLA
 				set "sekundy_do_powrotu=6"
@@ -824,7 +824,7 @@ echo(
 		:menu_zapis_a
 			set "menu_zapis="
 			cls
-			mode 80,4
+			mode 80,5
 
 			::Lokalizacja pliku tekstowego
 				set "menu_zapis_a_plik=C:\Users\%username%\Desktop\drzewo.txt"
@@ -997,7 +997,7 @@ echo(
 			set "menu_uruchamianie="
 			set "menu_uruchamianie_a_powrot_za=6"
 			cls
-			mode 80,6
+			mode 80,7
 
 			start http://tl.krakow.pl
 
