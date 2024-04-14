@@ -15,6 +15,8 @@ set "menu_egzamin_wyniki=0"
 for /f %%i in ('date /T') do set data_uruchomienia_skryptu=%%i
 for /f %%i in ('time /T') do set czas_uruchomienia_skryptu=%%i
 
+title Menu Windows - (c) Jakub Szczepa 2023-2024
+
 
 ::Aby na początku skryptu nie wyświetlało się logo, nalezy odkomentować poniszą linię:
 ::goto kat_glowna
